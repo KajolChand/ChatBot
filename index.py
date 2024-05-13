@@ -10,13 +10,13 @@ predefined_responses = {
     # Add more predefined questions and answers as needed
 }
 
-@app.route('/chatbot', methods=['POST'])
+@app.route('/')
 def chatbot():
     # Get user message from request
-    user_message = request.json.get('message')
+    # user_message = request.json.get('message') #I committed out
 
     # Process user message and generate chatbot response
-    chatbot_response = get_response(user_message)
+    chatbot_response = get_response("What is your name?")
 
     # Return chatbot response
     return jsonify({'response': chatbot_response})
